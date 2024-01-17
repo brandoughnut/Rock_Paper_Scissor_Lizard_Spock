@@ -96,4 +96,29 @@
     -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: black;
     margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+.difficultyCardBox{
+    background-color: #E96721;
+    height: 527px;
+    border: none;
+    border-radius: 25px;
+    width: 494px;
+}
+
+.difficultyImg{
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 25px;
+    margin-top: 10%;
+    margin-left: 17.65%;
+}
+
+.difficultyCardText {
+    font-family: LuckiestGuy;
+    font-size: 70px;
+    color: white;
+    margin-top: 5%;
 }
