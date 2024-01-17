@@ -48,7 +48,18 @@
     text-decoration: none;
     border: none;
     border-radius: 25px;
-    margin-left: 4%;
+    width: 298px;
+    font-size: 55px;
+    height: 84px;
+}
+
+.homeBtn{
+    background-color: #000000;
+    color: white;
+    font-family: LuckiestGuy;
+    text-decoration: none;
+    border: none;
+    border-radius: 25px;
     width: 298px;
     font-size: 55px;
     height: 84px;
