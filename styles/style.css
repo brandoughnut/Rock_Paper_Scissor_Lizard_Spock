@@ -122,3 +122,41 @@
     color: white;
     margin-top: 5%;
 }
+
+.gameImg{
+    width: 235px;
+    height: 235px;
+    border-radius: 235px;
+    object-fit: cover;
+}
+
+.gameChoose{
+    height: 131px;
+    background-color: #F5C031;
+    font-family: LuckiestGuy;
+    font-size: 55px;
+    border-radius: 25px;
+    color: #000000;
+}
+
+.gameScore{
+    height: 257px;
+    background-color: #F5C031;
+    font-family: LuckiestGuy;
+    font-size: 100px;
+    border-radius: 25px;
+    color: #000000;
+}
+
+.gameText {
+    font-family: LuckiestGuy;
+    font-size: 55px;
+    color: #000000;
+}
+
+.gameBtn{
+    height: 202px;
+    width: 202px;
+    border-radius: 202px;
+    object-fit: cover;
+}
