@@ -5,6 +5,8 @@
 
 .titleBG{
     background-image: url(../assets/tomandjerrybg.png);
+    height: 1080px;
+    width: 1920px;
 }
 
 .titleLogo{
@@ -33,4 +35,65 @@
     width: 508px;
     font-size: 70px;
     height: 143px;
+}
+
+.difficultyBg{
+    background-color: #FBD882;
+}
+
+.backBtn{
+    background-color: #000000;
+    color: white;
+    font-family: LuckiestGuy;
+    text-decoration: none;
+    border: none;
+    border-radius: 25px;
+    margin-left: 4%;
+    width: 298px;
+    font-size: 55px;
+    height: 84px;
+}
+
+.rulesBtn{
+    background-color: #000000;
+    color: white;
+    font-family: LuckiestGuy;
+    text-decoration: none;
+    border: none;
+    border-radius: 25px;
+    width: 395px;
+    font-size: 55px;
+    height: 84px;
+    margin-right: 4%;
+}
+
+.rulesTitle{
+    font-family: LuckiestGuy;
+    font-size: 70px;
+    color: white;
+}
+
+.rulesText{
+    font-family: LuckiestGuy;
+    font-size: 50px;
+    color: white;
+}
+
+.btn-close {
+  color: white;
+  opacity: 1;
+}
+
+.modal {
+    position: absolute;
+    left: -15%;
+  }
+
+.difficultyText{
+    font-family: LuckiestGuy;
+    font-size: 125px;
+    color: #F82626;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: black;
+    margin-top: 5%;
 }
