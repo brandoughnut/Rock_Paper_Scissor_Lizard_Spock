@@ -1,0 +1,36 @@
+@font-face {
+    font-family: LuckiestGuy;
+    src: url(../fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf);
+}
+
+.titleBG{
+    background-image: url(../assets/tomandjerrybg.png);
+}
+
+.titleLogo{
+    height: 209px;
+    width: auto;
+    margin-top: 3%;
+}
+
+.titleText{
+    margin-top: 3%;
+    font-family: LuckiestGuy;
+    font-size: 55px;
+    color: #F82626;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: black;
+}
+
+.titleBtn{
+    background-color: #000000;
+    color: white;
+    font-family: LuckiestGuy;
+    text-decoration: none;
+    border: none;
+    border-radius: 25px;
+    margin-right: 12%;
+    width: 508px;
+    font-size: 70px;
+    height: 143px;
+}
