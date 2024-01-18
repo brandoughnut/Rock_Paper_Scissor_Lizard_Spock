@@ -128,6 +128,11 @@
     border: none;
     border-radius: 25px;
     width: 494px;
+    cursor: pointer;
+}
+
+.difficultyCardBox:hover{
+    box-shadow: 0 0 60px #F82626;
 }
 
 .difficultyImg{
@@ -182,4 +187,10 @@
     width: 202px;
     border-radius: 202px;
     object-fit: cover;
+    cursor: pointer;
+}
+
+.gameBtn:hover {
+    box-shadow: 0 0 60px #E96721;
+    opacity: 0.9;
 }
