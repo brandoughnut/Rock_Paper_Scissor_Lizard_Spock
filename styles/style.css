@@ -64,6 +64,19 @@
     height: 84px;
 }
 
+.logText {
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    background-color: #F5C031;
+    height: 84px;
+    width: auto;
+    border-radius: 25px;
+    color: #000000;
+    font-family: LuckiestGuy;
+    font-size: 55px;
+    margin-left: 4%;
+}
+
 .rulesBtn{
     background-color: #000000;
     color: white;

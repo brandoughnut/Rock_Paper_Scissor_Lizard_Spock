@@ -23,6 +23,7 @@ let player2Img = document.getElementById("player2Img");
 let play1 = document.getElementById("play1");
 let play2 = document.getElementById("play2");
 let choice = document.getElementById("choice");
+let gameLog = document.getElementById("gameLog");
 
 let playAgain = document.getElementById("playAgain");
 let winnerText = document.getElementById("winnerText");
@@ -30,13 +31,13 @@ let winnerPhoto = document.getElementById("winnerPhoto");
 
 let isComputer = false;
 let isFriend = false;
-let bestOne = false;
-let bestFive = false;
-let bestSeven = false;
+let isPlayer1 = true;
+let isPlayer2 = false;
+let maxGuesses = 0;
 let player1Score = 0;
 let player2Score = 0;
-let computerScore = 0;
 let player1Choice = "";
+let player2Choice = "";
 
 playFriend.addEventListener("click", function () {
   backGround.className = "difficultyBg";
@@ -69,30 +70,32 @@ backToStart.addEventListener("click", function () {
 bestOfOne.addEventListener("click", function () {
   difficultyPage.className = "d-none";
   gamePage.className = "";
-  bestOne = true;
+  maxGuesses = 1;
 });
 
 bestOfFive.addEventListener("click", function () {
   difficultyPage.className = "d-none";
   gamePage.className = "";
-  bestFive = true;
+  maxGuesses = 3;
 });
 
 bestOfSeven.addEventListener("click", function () {
   difficultyPage.className = "d-none";
   gamePage.className = "";
-  bestSeven = true;
+  maxGuesses = 5;
 });
 
 playAgain.addEventListener("click", function () {
   winPage.className = "d-none";
   startPage.className = "";
   backGround.className = "titleBG";
+  choice.textContent = "Player 1 Chooses";
+  gameLog.textContent = "Log:";
   isComputer = false;
   isFriend = false;
-  bestOne = false;
-  bestFive = false;
-  bestSeven = false;
+  isPlayer1 = true;
+  isPlayer2 = false;
+  maxGuesses = 0;
   player1Score = 0;
   player2Score = 0;
   play1.textContent = player1Score;
@@ -100,272 +103,367 @@ playAgain.addEventListener("click", function () {
 });
 
 rock.addEventListener("click", function () {
-  player1Choice = "Rock";
   if (isComputer) {
+    player1Choice = "Rock";
     ComputerChoice();
   } else if (isFriend) {
+    if (isPlayer1) {
+      player1Choice = "Rock";
+      PlayAFriend();
+      choice.textContent = "Player 2 Chooses";
+      gameLog.textContent = "Log:";
+      isPlayer2 = true;
+      isPlayer1 = false;
+    } else if (isPlayer2) {
+      player2Choice = "Rock";
+      PlayAFriend();
+      choice.textContent = "Player 1 Chooses";
+      isPlayer1 = true;
+      isPlayer2 = false;
+    }
   }
 });
 
 paper.addEventListener("click", function () {
+  if (isComputer) {
     player1Choice = "Paper";
-    if (isComputer) {
-      ComputerChoice();
-    } else if (isFriend) {
-    }
-  });
+    ComputerChoice();
+  } else if (isFriend) {
+    if (isPlayer1) {
+        player1Choice = "Paper";
+        PlayAFriend();
+        choice.textContent = "Player 2 Chooses";
+        gameLog.textContent = "Log:";
+        isPlayer2 = true;
+        isPlayer1 = false;
+      } else if (isPlayer2) {
+        player2Choice = "Paper";
+        PlayAFriend();
+        choice.textContent = "Player 1 Chooses";
+        isPlayer1 = true;
+        isPlayer2 = false;
+      }
+  }
+});
 
-  scissors.addEventListener("click", function () {
+scissors.addEventListener("click", function () {
+  if (isComputer) {
     player1Choice = "Scissors";
-    if (isComputer) {
-      ComputerChoice();
-    } else if (isFriend) {
-    }
-  });
+    ComputerChoice();
+  } else if (isFriend) {
+    if (isPlayer1) {
+        player1Choice = "Scissors";
+        PlayAFriend();
+        choice.textContent = "Player 2 Chooses";
+        gameLog.textContent = "Log:";
+        isPlayer2 = true;
+        isPlayer1 = false;
+      } else if (isPlayer2) {
+        player2Choice = "Scissors";
+        PlayAFriend();
+        choice.textContent = "Player 1 Chooses";
+        isPlayer1 = true;
+        isPlayer2 = false;
+      }
+  }
+});
 
-  lizard.addEventListener("click", function () {
+lizard.addEventListener("click", function () {
+  if (isComputer) {
     player1Choice = "Lizard";
-    if (isComputer) {
-      ComputerChoice();
-    } else if (isFriend) {
-    }
-  });
+    ComputerChoice();
+  } else if (isFriend) {
+    if (isPlayer1) {
+        player1Choice = "Lizard";
+        PlayAFriend();
+        choice.textContent = "Player 2 Chooses";
+        gameLog.textContent = "Log:";
+        isPlayer2 = true;
+        isPlayer1 = false;
+      } else if (isPlayer2) {
+        player2Choice = "Lizard";
+        PlayAFriend();
+        choice.textContent = "Player 1 Chooses";
+        isPlayer1 = true;
+        isPlayer2 = false;
+      }
+  }
+});
 
-  spock.addEventListener("click", function () {
+spock.addEventListener("click", function () {
+  if (isComputer) {
     player1Choice = "Spock";
-    if (isComputer) {
-      ComputerChoice();
-    } else if (isFriend) {
-    }
-  });
+    ComputerChoice();
+  } else if (isFriend) {
+    if (isPlayer1) {
+        player1Choice = "Spock";
+        PlayAFriend();
+        choice.textContent = "Player 2 Chooses";
+        gameLog.textContent = "Log:";
+        isPlayer2 = true;
+        isPlayer1 = false;
+      } else if (isPlayer2) {
+        player2Choice = "Spock";
+        PlayAFriend();
+        choice.textContent = "Player 1 Chooses";
+        isPlayer1 = true;
+        isPlayer2 = false;
+      }
+  }
+});
+
+function PlayAFriend() {
+  if (player1Choice === "Rock" && player2Choice === "Scissors") {
+    player1Score++;
+    play1.textContent = player1Score;
+    gameLog.textContent = "Log: Point goes to Player 1";
+    player1Choice = "";
+    player2Choice = "";
+  } else if (player1Choice === "Rock" && player2Choice === "Lizard") {
+    player1Score++;
+    play1.textContent = player1Score;
+    gameLog.textContent = "Log: Point goes to Player 1";
+    player1Choice = "";
+    player2Choice = "";
+  } else if (player1Choice === "Rock" && player2Choice === "Paper") {
+    player2Score++;
+    play2.textContent = player2Score;
+    gameLog.textContent = "Log: Point goes to Player 2";
+    player1Choice = "";
+    player2Choice = "";
+  } else if (player1Choice === "Rock" && player2Choice === "Spock") {
+    player2Score++;
+    play2.textContent = player2Score;
+    gameLog.textContent = "Log: Point goes to Player 2";
+    player1Choice = "";
+    player2Choice = "";
+  } else if (player1Choice === "Paper" && player2Choice === "Rock") {
+    player1Score++;
+    play1.textContent = player1Score;
+    gameLog.textContent = "Log: Point goes to Player 1";
+    player1Choice = "";
+    player2Choice = "";
+  } else if (player1Choice === "Paper" && player2Choice === "Spock") {
+    player1Score++;
+    play1.textContent = player1Score;
+    gameLog.textContent = "Log: Point goes to Player 1";
+    player1Choice = "";
+    player2Choice = "";
+  } else if (player1Choice === "Paper" && player2Choice === "Scissors") {
+    player2Score++;
+    play2.textContent = player2Score;
+    gameLog.textContent = "Log: Point goes to Player 2";
+    player1Choice = "";
+    player2Choice = "";
+  } else if (player1Choice === "Paper" && player2Choice === "Lizard") {
+    player2Score++;
+    play2.textContent = player2Score;
+    gameLog.textContent = "Log: Point goes to Player 2";
+    player1Choice = "";
+    player2Choice = "";
+  } else if (player1Choice === "Scissors" && player2Choice === "Paper") {
+    player1Score++;
+    play1.textContent = player1Score;
+    gameLog.textContent = "Log: Point goes to Player 1";
+    player1Choice = "";
+    player2Choice = "";
+  } else if (player1Choice === "Scissors" && player2Choice === "Lizard") {
+    player1Score++;
+    play1.textContent = player1Score;
+    gameLog.textContent = "Log: Point goes to Player 1";
+    player1Choice = "";
+    player2Choice = "";
+  } else if (player1Choice === "Scissors" && player2Choice === "Rock") {
+    player2Score++;
+    play2.textContent = player2Score;
+    gameLog.textContent = "Log: Point goes to Player 2";
+    player1Choice = "";
+    player2Choice = "";
+  } else if (player1Choice === "Scissors" && player2Choice === "Spock") {
+    player2Score++;
+    play2.textContent = player2Score;
+    gameLog.textContent = "Log: Point goes to Player 2";
+    player1Choice = "";
+    player2Choice = "";
+  } else if (player1Choice === "Lizard" && player2Choice === "Spock") {
+    player1Score++;
+    play1.textContent = player1Score;
+    gameLog.textContent = "Log: Point goes to Player 1";
+    player1Choice = "";
+    player2Choice = "";
+  } else if (player1Choice === "Lizard" && player2Choice === "Paper") {
+    player1Score++;
+    play1.textContent = player1Score;
+    gameLog.textContent = "Log: Point goes to Player 1";
+    player1Choice = "";
+    player2Choice = "";
+  } else if (player1Choice === "Lizard" && player2Choice === "Scissors") {
+    player2Score++;
+    play2.textContent = player2Score;
+    gameLog.textContent = "Log: Point goes to Player 2";
+    player1Choice = "";
+    player2Choice = "";
+  } else if (player1Choice === "Lizard" && player2Choice === "Rock") {
+    player2Score++;
+    play2.textContent = player2Score;
+    gameLog.textContent = "Log: Point goes to Player 2";
+    player1Choice = "";
+    player2Choice = "";
+  } else if (player1Choice === "Spock" && player2Choice === "Scissors") {
+    player1Score++;
+    play1.textContent = player1Score;
+    gameLog.textContent = "Log: Point goes to Player 1";
+    player1Choice = "";
+    player2Choice = "";
+  } else if (player1Choice === "Spock" && player2Choice === "Rock") {
+    player1Score++;
+    play1.textContent = player1Score;
+    gameLog.textContent = "Log: Point goes to Player 1";
+    player1Choice = "";
+    player2Choice = "";
+  } else if (player1Choice === "Spock" && player2Choice === "Paper") {
+    player2Score++;
+    play2.textContent = player2Score;
+    gameLog.textContent = "Log: Point goes to Player 2";
+    player1Choice = "";
+    player2Choice = "";
+  } else if (player1Choice === "Spock" && player2Choice === "Lizard") {
+    player2Score++;
+    play2.textContent = player2Score;
+    gameLog.textContent = "Log: Point goes to Player 2";
+    player1Choice = "";
+    player2Choice = "";
+  }else if(player1Choice === player2Choice) {
+    gameLog.textContent = "Log: It was a tie";
+    player1Choice = "";
+    player2Choice = "";
+  }
+  console.log(player1Choice);
+  console.log(player2Choice);
+  console.log(player1Score);
+  console.log(player2Score);
+  gameEnd();
+}
 
 async function ComputerChoice() {
   const promise = await fetch(
     "https://scottsrpsls.azurewebsites.net/api/RockPaperScissors/GetRandomOption"
   );
   const data = await promise.text();
-    console.log(data);
-  if (bestOne) {
-    if (player1Score === 1) {
+  console.log(data);
+
+  if (player1Choice === "Rock" && data === "Scissors") {
+    player1Score++;
+    play1.textContent = player1Score;
+    gameLog.textContent = "Log: Point goes to Player 1";
+  } else if (player1Choice === "Rock" && data === "Lizard") {
+    player1Score++;
+    play1.textContent = player1Score;
+    gameLog.textContent = "Log: Point goes to Player 1";
+  } else if (player1Choice === "Rock" && data === "Paper") {
+    player2Score++;
+    play2.textContent = player2Score;
+    gameLog.textContent = "Log: Point goes to Computer";
+  } else if (player1Choice === "Rock" && data === "Spock") {
+    player2Score++;
+    play2.textContent = player2Score;
+    gameLog.textContent = "Log: Point goes to Computer";
+  } else if (player1Choice === "Paper" && data === "Rock") {
+    player1Score++;
+    play1.textContent = player1Score;
+    gameLog.textContent = "Log: Point goes to Player 1";
+  } else if (player1Choice === "Paper" && data === "Spock") {
+    player1Score++;
+    play1.textContent = player1Score;
+    gameLog.textContent = "Log: Point goes to Player 1";
+  } else if (player1Choice === "Paper" && data === "Scissors") {
+    player2Score++;
+    play2.textContent = player2Score;
+    gameLog.textContent = "Log: Point goes to Computer";
+  } else if (player1Choice === "Paper" && data === "Lizard") {
+    player2Score++;
+    play2.textContent = player2Score;
+    gameLog.textContent = "Log: Point goes to Computer";
+  } else if (player1Choice === "Scissors" && data === "Paper") {
+    player1Score++;
+    play1.textContent = player1Score;
+    gameLog.textContent = "Log: Point goes to Player 1";
+  } else if (player1Choice === "Scissors" && data === "Lizard") {
+    player1Score++;
+    play1.textContent = player1Score;
+    gameLog.textContent = "Log: Point goes to Player 1";
+  } else if (player1Choice === "Scissors" && data === "Rock") {
+    player2Score++;
+    play2.textContent = player2Score;
+    gameLog.textContent = "Log: Point goes to Computer";
+  } else if (player1Choice === "Scissors" && data === "Spock") {
+    player2Score++;
+    play2.textContent = player2Score;
+    gameLog.textContent = "Log: Point goes to Computer";
+  } else if (player1Choice === "Lizard" && data === "Spock") {
+    player1Score++;
+    play1.textContent = player1Score;
+    gameLog.textContent = "Log: Point goes to Player 1";
+  } else if (player1Choice === "Lizard" && data === "Paper") {
+    player1Score++;
+    play1.textContent = player1Score;
+    gameLog.textContent = "Log: Point goes to Player 1";
+  } else if (player1Choice === "Lizard" && data === "Scissors") {
+    player2Score++;
+    play2.textContent = player2Score;
+    gameLog.textContent = "Log: Point goes to Computer";
+  } else if (player1Choice === "Lizard" && data === "Rock") {
+    player2Score++;
+    play2.textContent = player2Score;
+    gameLog.textContent = "Log: Point goes to Computer";
+  } else if (player1Choice === "Spock" && data === "Scissors") {
+    player1Score++;
+    play1.textContent = player1Score;
+    gameLog.textContent = "Log: Point goes to Player 1";
+  } else if (player1Choice === "Spock" && data === "Rock") {
+    player1Score++;
+    play1.textContent = player1Score;
+    gameLog.textContent = "Log: Point goes to Player 1";
+  } else if (player1Choice === "Spock" && data === "Paper") {
+    player2Score++;
+    play2.textContent = player2Score;
+    gameLog.textContent = "Log: Point goes to Computer";
+  } else if (player1Choice === "Spock" && data === "Lizard") {
+    player2Score++;
+    play2.textContent = player2Score;
+    gameLog.textContent = "Log: Point goes to Computer";
+  }else if(player1Choice === data){
+    gameLog.textContent = "Log: It was a tie";
+  }
+  console.log(player1Score);
+  console.log(player2Score);
+  gameEnd();
+}
+
+function gameEnd() {
+  if (isComputer) {
+    if (player1Score === maxGuesses) {
       winPage.className = "";
       gamePage.className = "d-none";
       winnerPhoto.src = "./assets/tomandjerryplayer1.png";
       winnerText.textContent = "Player 1 Wins";
-    } else if (player2Score === 1) {
+    } else if (player2Score === maxGuesses) {
       winPage.className = "";
       gamePage.className = "d-none";
       winnerPhoto.src = "./assets/tomandjerrycomputer.png";
       winnerText.textContent = "Computer Wins LOL";
-    } else {
-      if (player1Choice === "Rock" && data === "Scissors") {
-        player1Score++;
-        play1.textContent = player1Score;
-      } else if (player1Choice === "Rock" && data === "Lizard") {
-        player1Score++;
-        play1.textContent = player1Score;
-      } else if (player1Choice === "Rock" && data === "Paper") {
-        player2Score++;
-        play2.textContent = player2Score;
-      } else if (player1Choice === "Rock" && data === "Spock") {
-        player2Score++;
-        play2.textContent = player2Score;
-      }else if(player1Choice === "Paper" && data === "Rock"){
-        player1Score++;
-        play1.textContent = player1Score;
-      }else if(player1Choice === "Paper" && data === "Spock"){
-        player1Score++;
-        play1.textContent = player1Score;
-      }else if(player1Choice === "Paper" && data === "Scissors"){
-        player2Score++;
-        play2.textContent = player2Score;
-      }else if(player1Choice === "Paper" && data === "Lizard"){
-        player2Score++;
-        play2.textContent = player2Score;
-      }else if(player1Choice === "Scissors" && data === "Paper"){
-        player1Score++;
-        play1.textContent = player1Score;
-      }else if(player1Choice === "Scissors" && data === "Lizard"){
-        player1Score++;
-        play1.textContent = player1Score;
-      }else if(player1Choice === "Scissors" && data === "Rock"){
-        player2Score++;
-        play2.textContent = player2Score;
-      }else if(player1Choice === "Scissors" && data === "Spock"){
-        player2Score++;
-        play2.textContent = player2Score;
-      }else if(player1Choice === "Lizard" && data === "Spock"){
-        player1Score++;
-        play1.textContent = player1Score;
-      }else if(player1Choice === "Lizard" && data === "Paper"){
-        player1Score++;
-        play1.textContent = player1Score;
-      }else if(player1Choice === "Lizard" && data === "Scissors"){
-        player2Score++;
-        play2.textContent = player2Score;
-      }else if(player1Choice === "Lizard" && data === "Rock"){
-        player2Score++;
-        play2.textContent = player2Score;
-      }else if(player1Choice === "Spock" && data === "Scissors"){
-        player1Score++;
-        play1.textContent = player1Score;
-      }else if(player1Choice === "Spock" && data === "Rock"){
-        player1Score++;
-        play1.textContent = player1Score;
-      }else if(player1Choice === "Spock" && data === "Paper"){
-        player2Score++;
-        play2.textContent = player2Score;
-      }else if(player1Choice === "Spock" && data === "Lizard"){
-        player2Score++;
-        play2.textContent = player2Score;
-      }
     }
-  } else if (bestFive) {
-    if (player1Score === 3) {
-        winPage.className = "";
-        gamePage.className = "d-none";
-        winnerPhoto.src = "./assets/tomandjerryplayer1.png";
-        winnerText.textContent = "Player 1 Wins";
-      } else if (player2Score === 3) {
-        winPage.className = "";
-        gamePage.className = "d-none";
-        winnerPhoto.src = "./assets/tomandjerrycomputer.png";
-        winnerText.textContent = "Computer Wins LOL";
-      } else {
-        if (player1Choice === "Rock" && data === "Scissors") {
-            player1Score++;
-            play1.textContent = player1Score;
-          } else if (player1Choice === "Rock" && data === "Lizard") {
-            player1Score++;
-            play1.textContent = player1Score;
-          } else if (player1Choice === "Rock" && data === "Paper") {
-            player2Score++;
-            play2.textContent = player2Score;
-          } else if (player1Choice === "Rock" && data === "Spock") {
-            player2Score++;
-            play2.textContent = player2Score;
-          }else if(player1Choice === "Paper" && data === "Rock"){
-            player1Score++;
-            play1.textContent = player1Score;
-          }else if(player1Choice === "Paper" && data === "Spock"){
-            player1Score++;
-            play1.textContent = player1Score;
-          }else if(player1Choice === "Paper" && data === "Scissors"){
-            player2Score++;
-            play2.textContent = player2Score;
-          }else if(player1Choice === "Paper" && data === "Lizard"){
-            player2Score++;
-            play2.textContent = player2Score;
-          }else if(player1Choice === "Scissors" && data === "Paper"){
-            player1Score++;
-            play1.textContent = player1Score;
-          }else if(player1Choice === "Scissors" && data === "Lizard"){
-            player1Score++;
-            play1.textContent = player1Score;
-          }else if(player1Choice === "Scissors" && data === "Rock"){
-            player2Score++;
-            play2.textContent = player2Score;
-          }else if(player1Choice === "Scissors" && data === "Spock"){
-            player2Score++;
-            play2.textContent = player2Score;
-          }else if(player1Choice === "Lizard" && data === "Spock"){
-            player1Score++;
-            play1.textContent = player1Score;
-          }else if(player1Choice === "Lizard" && data === "Paper"){
-            player1Score++;
-            play1.textContent = player1Score;
-          }else if(player1Choice === "Lizard" && data === "Scissors"){
-            player2Score++;
-            play2.textContent = player2Score;
-          }else if(player1Choice === "Lizard" && data === "Rock"){
-            player2Score++;
-            play2.textContent = player2Score;
-          }else if(player1Choice === "Spock" && data === "Scissors"){
-            player1Score++;
-            play1.textContent = player1Score;
-          }else if(player1Choice === "Spock" && data === "Rock"){
-            player1Score++;
-            play1.textContent = player1Score;
-          }else if(player1Choice === "Spock" && data === "Paper"){
-            player2Score++;
-            play2.textContent = player2Score;
-          }else if(player1Choice === "Spock" && data === "Lizard"){
-            player2Score++;
-            play2.textContent = player2Score;
-          }
-      }
-  } else if (bestSeven) {
-    if (player1Score === 5) {
-        winPage.className = "";
-        gamePage.className = "d-none";
-        winnerPhoto.src = "./assets/tomandjerryplayer1.png";
-        winnerText.textContent = "Player 1 Wins";
-      } else if (player2Score === 5) {
-        winPage.className = "";
-        gamePage.className = "d-none";
-        winnerPhoto.src = "./assets/tomandjerrycomputer.png";
-        winnerText.textContent = "Computer Wins LOL";
-      } else {
-        if (player1Choice === "Rock" && data === "Scissors") {
-            player1Score++;
-            play1.textContent = player1Score;
-          } else if (player1Choice === "Rock" && data === "Lizard") {
-            player1Score++;
-            play1.textContent = player1Score;
-          } else if (player1Choice === "Rock" && data === "Paper") {
-            player2Score++;
-            play2.textContent = player2Score;
-          } else if (player1Choice === "Rock" && data === "Spock") {
-            player2Score++;
-            play2.textContent = player2Score;
-          }else if(player1Choice === "Paper" && data === "Rock"){
-            player1Score++;
-            play1.textContent = player1Score;
-          }else if(player1Choice === "Paper" && data === "Spock"){
-            player1Score++;
-            play1.textContent = player1Score;
-          }else if(player1Choice === "Paper" && data === "Scissors"){
-            player2Score++;
-            play2.textContent = player2Score;
-          }else if(player1Choice === "Paper" && data === "Lizard"){
-            player2Score++;
-            play2.textContent = player2Score;
-          }else if(player1Choice === "Scissors" && data === "Paper"){
-            player1Score++;
-            play1.textContent = player1Score;
-          }else if(player1Choice === "Scissors" && data === "Lizard"){
-            player1Score++;
-            play1.textContent = player1Score;
-          }else if(player1Choice === "Scissors" && data === "Rock"){
-            player2Score++;
-            play2.textContent = player2Score;
-          }else if(player1Choice === "Scissors" && data === "Spock"){
-            player2Score++;
-            play2.textContent = player2Score;
-          }else if(player1Choice === "Lizard" && data === "Spock"){
-            player1Score++;
-            play1.textContent = player1Score;
-          }else if(player1Choice === "Lizard" && data === "Paper"){
-            player1Score++;
-            play1.textContent = player1Score;
-          }else if(player1Choice === "Lizard" && data === "Scissors"){
-            player2Score++;
-            play2.textContent = player2Score;
-          }else if(player1Choice === "Lizard" && data === "Rock"){
-            player2Score++;
-            play2.textContent = player2Score;
-          }else if(player1Choice === "Spock" && data === "Scissors"){
-            player1Score++;
-            play1.textContent = player1Score;
-          }else if(player1Choice === "Spock" && data === "Rock"){
-            player1Score++;
-            play1.textContent = player1Score;
-          }else if(player1Choice === "Spock" && data === "Paper"){
-            player2Score++;
-            play2.textContent = player2Score;
-          }else if(player1Choice === "Spock" && data === "Lizard"){
-            player2Score++;
-            play2.textContent = player2Score;
-          }
-      }
+  } else if (isFriend) {
+    if (player1Score === maxGuesses) {
+      winPage.className = "";
+      gamePage.className = "d-none";
+      winnerPhoto.src = "./assets/tomandjerryplayer1.png";
+      winnerText.textContent = "Player 1 Wins";
+    } else if (player2Score === maxGuesses) {
+      winPage.className = "";
+      gamePage.className = "d-none";
+      winnerPhoto.src = "./assets/tomandjerryplayer2.png";
+      winnerText.textContent = "Player 2 Wins";
+    }
   }
 }
