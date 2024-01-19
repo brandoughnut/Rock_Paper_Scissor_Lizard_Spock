@@ -82,7 +82,7 @@ bestOfFive.addEventListener("click", function () {
 bestOfSeven.addEventListener("click", function () {
   difficultyPage.className = "d-none";
   gamePage.className = "";
-  maxGuesses = 5;
+  maxGuesses = 4;
 });
 
 playAgain.addEventListener("click", function () {
