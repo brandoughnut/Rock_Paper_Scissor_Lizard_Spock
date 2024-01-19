@@ -217,124 +217,187 @@ function PlayAFriend() {
     player1Score++;
     play1.textContent = player1Score;
     gameLog.textContent = "Log: Point goes to Player 1";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
     player1Choice = "";
     player2Choice = "";
   } else if (player1Choice === "Rock" && player2Choice === "Lizard") {
     player1Score++;
     play1.textContent = player1Score;
     gameLog.textContent = "Log: Point goes to Player 1";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
     player1Choice = "";
     player2Choice = "";
   } else if (player1Choice === "Rock" && player2Choice === "Paper") {
     player2Score++;
     play2.textContent = player2Score;
     gameLog.textContent = "Log: Point goes to Player 2";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
     player1Choice = "";
     player2Choice = "";
   } else if (player1Choice === "Rock" && player2Choice === "Spock") {
     player2Score++;
     play2.textContent = player2Score;
     gameLog.textContent = "Log: Point goes to Player 2";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
     player1Choice = "";
     player2Choice = "";
   } else if (player1Choice === "Paper" && player2Choice === "Rock") {
     player1Score++;
     play1.textContent = player1Score;
     gameLog.textContent = "Log: Point goes to Player 1";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
     player1Choice = "";
     player2Choice = "";
   } else if (player1Choice === "Paper" && player2Choice === "Spock") {
     player1Score++;
     play1.textContent = player1Score;
     gameLog.textContent = "Log: Point goes to Player 1";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
     player1Choice = "";
     player2Choice = "";
   } else if (player1Choice === "Paper" && player2Choice === "Scissors") {
     player2Score++;
     play2.textContent = player2Score;
     gameLog.textContent = "Log: Point goes to Player 2";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
     player1Choice = "";
     player2Choice = "";
   } else if (player1Choice === "Paper" && player2Choice === "Lizard") {
     player2Score++;
     play2.textContent = player2Score;
     gameLog.textContent = "Log: Point goes to Player 2";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
     player1Choice = "";
     player2Choice = "";
   } else if (player1Choice === "Scissors" && player2Choice === "Paper") {
     player1Score++;
     play1.textContent = player1Score;
     gameLog.textContent = "Log: Point goes to Player 1";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
     player1Choice = "";
     player2Choice = "";
   } else if (player1Choice === "Scissors" && player2Choice === "Lizard") {
     player1Score++;
     play1.textContent = player1Score;
     gameLog.textContent = "Log: Point goes to Player 1";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
     player1Choice = "";
     player2Choice = "";
   } else if (player1Choice === "Scissors" && player2Choice === "Rock") {
     player2Score++;
     play2.textContent = player2Score;
     gameLog.textContent = "Log: Point goes to Player 2";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
     player1Choice = "";
     player2Choice = "";
   } else if (player1Choice === "Scissors" && player2Choice === "Spock") {
     player2Score++;
     play2.textContent = player2Score;
     gameLog.textContent = "Log: Point goes to Player 2";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
     player1Choice = "";
     player2Choice = "";
   } else if (player1Choice === "Lizard" && player2Choice === "Spock") {
     player1Score++;
     play1.textContent = player1Score;
     gameLog.textContent = "Log: Point goes to Player 1";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
     player1Choice = "";
     player2Choice = "";
   } else if (player1Choice === "Lizard" && player2Choice === "Paper") {
     player1Score++;
     play1.textContent = player1Score;
     gameLog.textContent = "Log: Point goes to Player 1";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
     player1Choice = "";
     player2Choice = "";
   } else if (player1Choice === "Lizard" && player2Choice === "Scissors") {
     player2Score++;
     play2.textContent = player2Score;
     gameLog.textContent = "Log: Point goes to Player 2";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
     player1Choice = "";
     player2Choice = "";
   } else if (player1Choice === "Lizard" && player2Choice === "Rock") {
     player2Score++;
     play2.textContent = player2Score;
     gameLog.textContent = "Log: Point goes to Player 2";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
     player1Choice = "";
     player2Choice = "";
   } else if (player1Choice === "Spock" && player2Choice === "Scissors") {
     player1Score++;
     play1.textContent = player1Score;
     gameLog.textContent = "Log: Point goes to Player 1";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
     player1Choice = "";
     player2Choice = "";
   } else if (player1Choice === "Spock" && player2Choice === "Rock") {
     player1Score++;
     play1.textContent = player1Score;
     gameLog.textContent = "Log: Point goes to Player 1";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
     player1Choice = "";
     player2Choice = "";
   } else if (player1Choice === "Spock" && player2Choice === "Paper") {
     player2Score++;
     play2.textContent = player2Score;
     gameLog.textContent = "Log: Point goes to Player 2";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
     player1Choice = "";
     player2Choice = "";
   } else if (player1Choice === "Spock" && player2Choice === "Lizard") {
     player2Score++;
     play2.textContent = player2Score;
     gameLog.textContent = "Log: Point goes to Player 2";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
     player1Choice = "";
     player2Choice = "";
   }else if(player1Choice === player2Choice) {
     gameLog.textContent = "Log: It was a tie";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
     player1Choice = "";
     player2Choice = "";
   }
@@ -351,84 +414,147 @@ async function ComputerChoice() {
     player1Score++;
     play1.textContent = player1Score;
     gameLog.textContent = "Log: Point goes to Player 1";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
   } else if (player1Choice === "Rock" && data === "Lizard") {
     player1Score++;
     play1.textContent = player1Score;
     gameLog.textContent = "Log: Point goes to Player 1";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
   } else if (player1Choice === "Rock" && data === "Paper") {
     player2Score++;
     play2.textContent = player2Score;
     gameLog.textContent = "Log: Point goes to Computer";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
   } else if (player1Choice === "Rock" && data === "Spock") {
     player2Score++;
     play2.textContent = player2Score;
     gameLog.textContent = "Log: Point goes to Computer";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
   } else if (player1Choice === "Paper" && data === "Rock") {
     player1Score++;
     play1.textContent = player1Score;
     gameLog.textContent = "Log: Point goes to Player 1";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
   } else if (player1Choice === "Paper" && data === "Spock") {
     player1Score++;
     play1.textContent = player1Score;
     gameLog.textContent = "Log: Point goes to Player 1";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
   } else if (player1Choice === "Paper" && data === "Scissors") {
     player2Score++;
     play2.textContent = player2Score;
     gameLog.textContent = "Log: Point goes to Computer";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
   } else if (player1Choice === "Paper" && data === "Lizard") {
     player2Score++;
     play2.textContent = player2Score;
     gameLog.textContent = "Log: Point goes to Computer";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
   } else if (player1Choice === "Scissors" && data === "Paper") {
     player1Score++;
     play1.textContent = player1Score;
     gameLog.textContent = "Log: Point goes to Player 1";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
   } else if (player1Choice === "Scissors" && data === "Lizard") {
     player1Score++;
     play1.textContent = player1Score;
     gameLog.textContent = "Log: Point goes to Player 1";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
   } else if (player1Choice === "Scissors" && data === "Rock") {
     player2Score++;
     play2.textContent = player2Score;
     gameLog.textContent = "Log: Point goes to Computer";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
   } else if (player1Choice === "Scissors" && data === "Spock") {
     player2Score++;
     play2.textContent = player2Score;
     gameLog.textContent = "Log: Point goes to Computer";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
   } else if (player1Choice === "Lizard" && data === "Spock") {
     player1Score++;
     play1.textContent = player1Score;
     gameLog.textContent = "Log: Point goes to Player 1";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
   } else if (player1Choice === "Lizard" && data === "Paper") {
     player1Score++;
     play1.textContent = player1Score;
     gameLog.textContent = "Log: Point goes to Player 1";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
   } else if (player1Choice === "Lizard" && data === "Scissors") {
     player2Score++;
     play2.textContent = player2Score;
     gameLog.textContent = "Log: Point goes to Computer";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
   } else if (player1Choice === "Lizard" && data === "Rock") {
     player2Score++;
     play2.textContent = player2Score;
     gameLog.textContent = "Log: Point goes to Computer";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
   } else if (player1Choice === "Spock" && data === "Scissors") {
     player1Score++;
     play1.textContent = player1Score;
     gameLog.textContent = "Log: Point goes to Player 1";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
   } else if (player1Choice === "Spock" && data === "Rock") {
     player1Score++;
     play1.textContent = player1Score;
     gameLog.textContent = "Log: Point goes to Player 1";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
   } else if (player1Choice === "Spock" && data === "Paper") {
     player2Score++;
     play2.textContent = player2Score;
     gameLog.textContent = "Log: Point goes to Computer";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
   } else if (player1Choice === "Spock" && data === "Lizard") {
     player2Score++;
     play2.textContent = player2Score;
     gameLog.textContent = "Log: Point goes to Computer";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
   }else if(player1Choice === data){
     gameLog.textContent = "Log: It was a tie";
+    setTimeout(function() {
+      gameLog.textContent = "Log:";
+    }, 1500);
   }
   gameEnd();
 }
