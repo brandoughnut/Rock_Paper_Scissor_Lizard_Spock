@@ -338,10 +338,6 @@ function PlayAFriend() {
     player1Choice = "";
     player2Choice = "";
   }
-  console.log(player1Choice);
-  console.log(player2Choice);
-  console.log(player1Score);
-  console.log(player2Score);
   gameEnd();
 }
 
@@ -350,7 +346,6 @@ async function ComputerChoice() {
     "https://scottsrpsls.azurewebsites.net/api/RockPaperScissors/GetRandomOption"
   );
   const data = await promise.text();
-  console.log(data);
 
   if (player1Choice === "Rock" && data === "Scissors") {
     player1Score++;
@@ -435,8 +430,6 @@ async function ComputerChoice() {
   }else if(player1Choice === data){
     gameLog.textContent = "Log: It was a tie";
   }
-  console.log(player1Score);
-  console.log(player2Score);
   gameEnd();
 }
 
